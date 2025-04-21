@@ -1,4 +1,4 @@
-vim.cmd.colorscheme "github_dark_default"
+vim.cmd.colorscheme "default"
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
@@ -16,7 +16,7 @@ vim.opt.background = "dark"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "./nvim-undo"
+vim.opt.undodir = os.getenv("HOME") .. "/nvim-undo"
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.hlsearch = false
