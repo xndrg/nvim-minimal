@@ -9,4 +9,7 @@ Super simple and actually usable neovim config for my needs
 
 # Quickstart
 Simply move all the files into your nvim config directory.\
-Maybe later I'll create some simple script to do everything for you.
+Maybe later I'll create some script to do everything for you.\
+Configuration uses default colorscheme to prevent errors since plugins are not installed on the first launch\
+Run `:PackerSync` to install plugins\
+Then you can change colorscheme in [options.lua](lua/options.lua)
