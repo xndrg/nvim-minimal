@@ -1,4 +1,3 @@
-vim.cmd.colorscheme "default"
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
