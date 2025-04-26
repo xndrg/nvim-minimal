@@ -45,9 +45,20 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("i", "<Tab>", "<C-f>")
-vim.keymap.set("n", "<Tab>", "==")
-vim.keymap.set("v", "<Tab>", "=")
 vim.keymap.set("n", "<leader>y", "_y$$")
 vim.keymap.set("n", "<C-t>", "F<yf>f>pF<a/<Esc>hi")
 vim.keymap.set("i", "<C-t>", "<Esc>F<yf>f>pF<a/<Esc>hi")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Emacs like indentation
+-- Pressing TAB in any mode indents current line or selection
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "",
+  callback = function()
+    local current_buffer = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_keymap(current_buffer, "i", "<Tab>", "<C-f>", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(current_buffer, "n", "<Tab>", "==", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(current_buffer, "v", "<Tab>", "=", { noremap = true, silent = true })
+  end
+})
