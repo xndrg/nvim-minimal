@@ -33,6 +33,8 @@ vim.cmd("autocmd FileType javascriptreact :setlocal sw=2 ts=2 sts=2")
 vim.cmd("autocmd FileType typescriptreact :setlocal sw=2 ts=2 sts=2")
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Explore)
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
@@ -43,8 +45,13 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>y", "_y$$")
 vim.keymap.set("n", "<C-t>", "F<yf>f>pF<a/<Esc>hi")
 vim.keymap.set("i", "<C-t>", "<Esc>F<yf>f>pF<a/<Esc>hi")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-x>e", ":.lua<CR>")
+vim.keymap.set("v", "<C-x>e", ":lua<CR>")
+vim.keymap.set("v", "<M-w>", "\"+y")
+vim.keymap.set("n", "<C-y>", "\"+p")
+
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 
 -- Emacs like indentation
 -- Pressing TAB in any mode indents current line or selection
