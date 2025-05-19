@@ -32,6 +32,14 @@ vim.cmd("autocmd FileType typescript :setlocal sw=2 ts=2 sts=2")
 vim.cmd("autocmd FileType javascriptreact :setlocal sw=2 ts=2 sts=2")
 vim.cmd("autocmd FileType typescriptreact :setlocal sw=2 ts=2 sts=2")
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt.colorcolumn = "88"
+    vim.keymap.set("n", "<C-h>", ":w<CR>:!python %<CR>", {buffer = true, silent = true})
+  end
+})
+
 vim.keymap.set("n", "<leader>e", vim.cmd.Explore)
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
