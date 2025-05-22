@@ -35,11 +35,14 @@ vim.cmd("autocmd FileType typescriptreact :setlocal sw=2 ts=2 sts=2")
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
   callback = function()
-    vim.opt.colorcolumn = "88"
     vim.keymap.set("n", "<C-h>", ":w<CR>:!python %<CR>", {buffer = true, silent = true})
   end
 })
 
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
+vim.keymap.set("v", "+", "<C-a>gv")
+vim.keymap.set("v", "-", "<C-x>gv")
 vim.keymap.set("n", "<leader>e", vim.cmd.Explore)
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -53,8 +56,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>y", "_y$$")
 vim.keymap.set("n", "<C-t>", "F<yf>f>pF<a/<Esc>hi")
 vim.keymap.set("i", "<C-t>", "<Esc>F<yf>f>pF<a/<Esc>hi")
-vim.keymap.set("n", "<C-x>e", ":.lua<CR>")
-vim.keymap.set("v", "<C-x>e", ":lua<CR>")
+-- vim.keymap.set("n", "<C-w>e", ":.lua<CR>")
+-- vim.keymap.set("v", "<C-w>e", ":lua<CR>")
 vim.keymap.set("v", "<M-w>", "\"+y")
 vim.keymap.set("n", "<C-y>", "\"+p")
 
@@ -72,3 +75,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.api.nvim_buf_set_keymap(current_buffer, "i", "<Tab>", "<C-f>", { noremap = true, silent = true })
   end
 })
+
+-- vim.opt.cursorline = false
+-- vim.opt.relativenumber = false
+-- vim.opt.number = false
+-- vim.cmd([[
+--   set laststatus=0
+--   hi! link StatusLine Normal
+--   hi! link StatusLineNC Normal
+--   set statusline=%{repeat('─',winwidth('.'))}
+-- ]])

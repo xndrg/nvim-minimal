@@ -2,6 +2,11 @@ return {
   "neovim/nvim-lspconfig",
   config = function()
     local lspconfig = require("lspconfig")
+    -- lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, {
+    --   handlers = {
+    --     ["textDocument/publishDiagnostics"] = function() end,  -- Disable diagnostics
+    --   },
+    -- })
 
     lspconfig.lua_ls.setup {
       on_init = function(client)
