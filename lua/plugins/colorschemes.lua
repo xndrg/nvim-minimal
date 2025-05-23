@@ -18,6 +18,17 @@ return {
   {
     "blazkowolf/gruber-darker.nvim",
     lazy = false,
+    config = function()
+      require("gruber-darker").setup({
+        bold = false,
+        italic = {
+          strings = false,
+          comments = true,
+          operators = false,
+          folds = false,
+        }
+      })
+    end
   },
   {
     "p00f/alabaster.nvim",
