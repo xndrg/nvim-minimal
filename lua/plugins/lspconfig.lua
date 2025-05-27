@@ -43,7 +43,9 @@ return {
     }
 
     lspconfig.ts_ls.setup {}
+
     lspconfig.zls.setup {}
     lspconfig.pyright.setup {}
+    lspconfig.clangd.setup {}
   end,
 }

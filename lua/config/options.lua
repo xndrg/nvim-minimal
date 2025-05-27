@@ -76,7 +76,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
--- vim.opt.cursorline = false
+vim.opt.cursorline = false
 -- vim.opt.relativenumber = false
 -- vim.opt.number = false
 -- vim.cmd([[

@@ -12,6 +12,9 @@ return {
         "alabaster",
         "quiet",
         "base16-default-dark",
+        "dracula",
+        "cyberdream",
+        "tokyonight",
       },
       livePreview = true,
     })

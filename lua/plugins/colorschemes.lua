@@ -37,5 +37,20 @@ return {
   {
     "RRethy/base16-nvim",
     lazy = false,
-  }
+  },
+  {
+    "Mofiqul/dracula.nvim",
+    lazy = false,
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    opts = {
+      transparent = true
+    },
+    lazy = false,
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+  },
 }
